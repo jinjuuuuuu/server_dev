@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'codex_judging',
 ]
 
 MIDDLEWARE = [
@@ -123,5 +124,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CELERY_BROKER_URL = "redis://localhost:6379/0"  # Redis를 브로커로 사용
+CELERY_RESULT_BACKEND = "redis://localhost:6379/0"  # Redis를 백엔드로 사용
 CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_TASK_SERIALIZER = "json"
